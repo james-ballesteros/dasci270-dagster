@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+hackernews/__init__.py
+hackernews/assets.py
+hackernews/definitions.py
+hackernews.egg-info/PKG-INFO
+hackernews.egg-info/SOURCES.txt
+hackernews.egg-info/dependency_links.txt
+hackernews.egg-info/requires.txt
+hackernews.egg-info/top_level.txt

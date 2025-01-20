@@ -1,0 +1,27 @@
+[32m2025-01-20 23:30:47 +0800[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d10bda13-cb03-4d37-8d8e-3ab4ba831076 - 76356 - LOGS_CAPTURED - Started capturing logs in process (pid: 76356).
+[32m2025-01-20 23:30:47 +0800[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d10bda13-cb03-4d37-8d8e-3ab4ba831076 - 76356 - hackernews_stories - STEP_START - Started execution of step "hackernews_stories".
+[32m2025-01-20 23:38:38 +0800[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - d10bda13-cb03-4d37-8d8e-3ab4ba831076 - 76356 - hackernews_stories - STEP_FAILURE - Execution of step "hackernews_stories" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "hackernews_stories"::
+
+AttributeError: 'DataFrame' object has no attribute 'type'
+
+Stack Trace:
+  File "/Users/jamesballesteros/miniforge3/envs/dagster/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 55, in op_execution_error_boundary
+    yield
+  File "/Users/jamesballesteros/miniforge3/envs/dagster/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 480, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/Users/jamesballesteros/miniforge3/envs/dagster/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 127, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/Users/jamesballesteros/miniforge3/envs/dagster/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+                                                                    ^^^^^^^^^^^^^^^^^^
+  File "/Users/jamesballesteros/MLOPS/dasci270-dagster/hackernews/hackernews/assets.py", line 20, in hackernews_stories
+    df = df[df.type == "story"]
+            ^^^^^^^
+  File "/Users/jamesballesteros/miniforge3/envs/dagster/lib/python3.12/site-packages/pandas/core/generic.py", line 6299, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0m

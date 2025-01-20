@@ -1,0 +1,10 @@
+[project]
+name = "dasci270-dagster"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "dagster>=1.9.9",
+    "dagster-webserver>=1.9.9",
+]
